@@ -1,2 +1,2 @@
 # money-ledger
-Money-Ledger app creat with MERN stack
+Money-Ledger app created with MERN stack
