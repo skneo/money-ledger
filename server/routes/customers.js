@@ -6,7 +6,7 @@ const fetchuser = require('../middleware/fetchuser')
 
 router.get('/all-customers', fetchuser, async (req, res) => {
     try {
-        const customers = await Customer.find({ userId: req.user.id, softDelete: false }).select("-userId -softDelete -__v");
+        const customers = await Customer.find({ userId: req.user.id, softDelete: false }).select("-userId -softDelete -__v").sort({ name: 1 });
         res.send({ customers })
     } catch (error) {
         res.status(500).send({ error: "Internal server error" })
